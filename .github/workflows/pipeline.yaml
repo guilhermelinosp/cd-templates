@@ -10,4 +10,5 @@ permissions:
 
 jobs:
   release:
-    uses: guilhermelinosp/ci-templates/.github/workflows/release.yaml@v1.0.0
+    needs: sign
+    uses: guilhermelinosp/ci-templates/.github/workflows/release.yaml@latest

@@ -3,18 +3,11 @@ name: pipeline
 on:
   push:
     branches: [ "main" ]
-    tags:
-      - "v*"
 
 permissions:
   contents: write
   packages: write
-  id-token: write
 
 jobs:
-  login:
-    uses: guilhermelinosp/ci-templates/.github/workflows/login.yaml@latest
-
   release:
-    needs: login
     uses: guilhermelinosp/ci-templates/.github/workflows/release.yaml@latest
